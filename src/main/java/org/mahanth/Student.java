@@ -15,7 +15,7 @@ public class Student {
 
 //    @OneToMany//(cascade = CascadeType.ALL)
 //    @OneToMany(mappedBy = "student")
-    @ManyToMany(mappedBy = "student")
+    @ManyToMany(mappedBy = "student", fetch = FetchType.EAGER) // By default, fetch type will be lazy (fetch = FetchType.LAZY)
     private List<Laptop> laptop = new ArrayList<>();
 
     public int getRollno() {

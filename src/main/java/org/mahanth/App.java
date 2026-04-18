@@ -35,8 +35,10 @@ public class App
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
 
-        session.persist(laptop);
-        session.persist(student);
+//        session.persist(laptop);
+//        session.persist(student);
+
+        Student student2 = (Student)session.find(Student.class, 1);
 
         transaction.commit();
         session.close();
