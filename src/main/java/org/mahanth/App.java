@@ -22,7 +22,14 @@ public class App
 
         Student student = new Student();
         student.setRollno(1);
-        student.setName("Sai Mahanth Nagendla");
+//        student.setName("Sai Mahanth Nagendla");
+
+        StudentName studentName = new StudentName();
+        studentName.setFirstName("Nagendla");
+        studentName.setMiddleName("Sai Mahanth");
+        studentName.setLastName("Reddy");
+
+        student.setStudentName(studentName);
         student.setMarks(91);
         student.getLaptop().add(laptop); // adding laptop objects manually
 //        student.setLaptop(laptops); // Passing the list of added laptop objects directly
@@ -35,10 +42,10 @@ public class App
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
 
-//        session.persist(laptop);
-//        session.persist(student);
+        session.persist(laptop);
+        session.persist(student);
 
-        Student student2 = (Student)session.find(Student.class, 1);
+//        Student student2 = (Student)session.find(Student.class, 1);
 
         transaction.commit();
         session.close();

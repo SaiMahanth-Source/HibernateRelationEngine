@@ -6,11 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+//@Table(name ="STUDENT") // Annotation is used for user defined table name
 public class Student {
 
     @Id
+//    @Column(name = "STUDENT_ROLL_NO") // Annotation is used for user defined column name
     private int rollno;
-    private String name;
+//    private String name;
+    private StudentName studentName;
+
     private int marks;
 
 //    @OneToMany//(cascade = CascadeType.ALL)
@@ -21,9 +25,9 @@ public class Student {
     public int getRollno() {
         return rollno;
     }
-    public String getName() {
-        return name;
-    }
+//    public String getName() {
+//        return name;
+//    }
     public int getMarks() {
         return marks;
     }
@@ -31,9 +35,9 @@ public class Student {
     public void setRollno(int rollno) {
         this.rollno = rollno;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
+//    public void setName(String name) {
+//        this.name = name;
+//    }
     public void setMarks(int marks) {
         this.marks = marks;
     }
@@ -46,12 +50,29 @@ public class Student {
         this.laptop = laptop;
     }
 
+    public StudentName getStudentName() {
+        return studentName;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
                 "rollno=" + rollno +
-                ", name='" + name + '\'' +
+                ", studentName=" + studentName +
                 ", marks=" + marks +
                 '}';
     }
+
+    public void setStudentName(StudentName studentName) {
+        this.studentName = studentName;
+    }
+
+//    @Override
+//    public String toString() {
+//        return "Student{" +
+//                "rollno=" + rollno +
+//                ", name='" + name + '\'' +
+//                ", marks=" + marks +
+//                '}';
+//    }
 }
